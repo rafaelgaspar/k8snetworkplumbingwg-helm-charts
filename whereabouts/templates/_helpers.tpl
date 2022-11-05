@@ -45,7 +45,6 @@ Create chart name and version as used by the chart label.
 Common labels
 */}}
 {{- define "whereabouts.labels" -}}
-app: whereabouts
 helm.sh/chart: {{ include "whereabouts.chart" . }}
 {{ include "whereabouts.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
@@ -58,7 +57,6 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 Selector labels
 */}}
 {{- define "whereabouts.selectorLabels" -}}
-app: {{ include "whereabouts.name" . }}
 app.kubernetes.io/name: {{ include "whereabouts.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}

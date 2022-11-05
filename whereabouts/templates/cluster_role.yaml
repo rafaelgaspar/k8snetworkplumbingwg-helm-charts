@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: {{ include "whereabouts.serviceAccountName" . }}
+  labels:
+    {{- include "whereabouts.labels" . | nindent 4 }}
 rules:
 - apiGroups:
   - whereabouts.cni.cncf.io
